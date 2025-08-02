@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+  <script src="./node_modules/bootstrap/dist/js/"></script>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('form-msg').textContent = 'Thanks for reaching out!';
+      this.reset();
+    });
+  </script>
+  <style>
+* {
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+body {
+  background-color: rgb(242, 235, 244);
+  color: rgb(4, 25, 56);
+  padding: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+#bar {
+  display: flex;
+  gap: 5px;
+}
+
+#bar a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 10px;
+  border-radius: 40px;
+  transition: background 0.3s;
+  font-size: 20px;
+}
+
+#bar a:hover {
+  background-color: rgb(98, 98, 135);
+  color: white;
+}
+
+h1{
+  color: rgb(30, 30, 72);
+  font-weight: bold;
+  font-style: italic;
+  font-size: 40px;
+}
+h2 {
+  color: rgb(30, 30, 72);
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.section {
+  display: none;
+  animation: fade 0.5s ease-in-out;
+}
+
+.active {
+  display: block;
+}
+footer{
+  background-color: rgb(236, 236, 237);
+  padding: 20px;
+  text-align: center;
+}
+.social-links{
+  margin-top: 10px;
+}
+.social-links a{
+  margin: 15px;
+  font-size: 30px;
+  color: #747070;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.social-links a:hover{
+  color: rgb(102, 60, 4);
+}
+
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#div1{
+   /* border:2px solid red;  */
+  width:500px;
+}
+#div2{
+  background: seashell;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 550px;
+  width: 650px;
+  align-items: center;
+  position:relative;
+  left:700px;
+  bottom:500px;
+}
+p{
+  margin: 20px;
+  text-align: justify;
+  font-size: 18px;
+}
+.project-card {
+  background: seashell;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+#skills{
+  align-items: center;
+  font-size: 20px;
+
+}
+#resume a{
+  text-align: center;
+  border-radius: 40%;
+  box-shadow: 2px 2px 2px solid gray;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+#contact-form input{
+  padding: 10px;
+  border: 1px solid rgb(222, 206, 206);
+  border-radius: 4px;
+}
+#contact-form textarea {
+  padding: 10px;
+  border: 1px solid  rgb(222, 206, 206);
+  border-radius: 4px;
+}
+
+#contact-form button {
+  background-color:  rgb(222, 206, 206);
+  color: rgb(118, 104, 104);
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #666;
+}
+
+#cer {
+  display: inline-flex;
+  flex-direction: column;
+  justify-items: center;
+}
+#intro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#intro img{
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px rgb(47, 35, 37);
+  object-fit: cover;
+  height: 250px;
+  width: 250px;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Chinmayee</h1>
+      <div id="bar">
+        <div><a href="#" onclick="showSection('home')">Home</a></div>
+        <div><a href="#" onclick="showSection('about')">About</a></div>
+        <div><a href="#" onclick="showSection('skills')">Skills</a></div>
+        <div><a href="#" onclick="showSection('projects')">Projects</a></div>
+        <div><a href="#" onclick="showSection('resume')">Resume</a></div>
+        <div><a href="#" onclick="showSection('contacts')">Contacts</a></div>
+      </div>
+    </nav>
+  </header> 
+  <main>
+    <section id="home" class="section active">
+      <h2>Home</h2>
+      <div id="intro">
+        <img src="./images/p.jpg" alt="Profile Photo" />
+        <h3>
+          Hi! <br />I'm Chinmayee, <br /> a Frontend Developer
+        </h3>
+      </div>
+    </section>
+    <section id="about" class="section">
+      <div id="div1"><img src="./images/p.jpg" height="400" width="400" /></div>
+      <div id="div2">
+        <h2>About Me</h2>   
+        <p>Hi! I’m Chinmayee, a passionate Web developer. I recently completed my MCA specializing in Computer Science from Biju Pattanik University.</p>
+        <p>I have a strong interest in web development and love exploring new technologies. I’m proficient in HTML5, CSS3, Bootstrap, JavaScript, Python, and have hands-on experience with databases like MongoDB, MySQL.</p>
+        <p>I enjoy turning ideas into interactive applications and continuously learning to improve my skills. I'm currently seeking opportunities where I can apply my knowledge to real-world projects, collaborate with experienced developers, and grow as a full-stack developer.</p>
+      </div>
+    </section>
+    <section id="skills" class="section">
+      <h2>My Skills</h2>
+      <div>
+        <div id="cer"><img src="./images/html.jpg" height="150" width="150"></div>
+        <div id="cer"><img src="./images/css.jpg" height="150" width="150"></div>
+        <div id="cer"><img src="./images/js.jpg" height="150" width="150"></div>
+        <div id="cer"><img src="./images/react.jpg" height="150" width="150"></div>
+        <div id="cer"><img src="./images/mongo.jpg" height="150" width="150"></div>
+        <div id="cer"><img src="./images/MySQL.jpg" height="00" width="100"></div><br>
+        <div id="cer"><img src="./images/node.jpg" height="100" width="100"></div>
+        <div id="cer"><img src="./images/express.jpg" height="100" width="100"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="project-card">c:\Users\hp\Downloads\
+        <h4>Nasa API</h4>
+        <p>fetch API</p>
+        <a href="./nasa-card.html">View Project</a>
+      </div>
+      <div class="project-card">
+        <h4>to-do</h4>
+        <p>A to-do app built using Node.js, MongoDB, HTML, CSS, and JavaScript.</p>
+        <a href="">View Project</a>
+      </div>
+    </section>
+
+    <section id="resume" class="section">
+      <h2>My Resume</h2>
+      <div>
+        <a href="./Chinmayee-Das (2).pdf" download><button>RESUME</button></a>
+      </div>
+    </section>
+
+    <section id="contacts" class="section">
+      <h2>Contacts</h2>
+      <form id="contact-form">
+        <input type="text" name="Name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p id="form-msg"></p>
+    </section>
+
+  </main>  
+  <footer>
+    <p>&copy; 2025 Chinmayee Das. All rights reserved.</p>
+    <p>Connect with me:</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/g_u_d_d_i_0000" target="_blank" title="instagram" class="bi bi-instagram"></a>
+      <a href="https://www.linkedin.com/in/chinmayee-das-863623263" target="_blank" title="linkedin" class="bi bi-linkedin"></a>
+      <a href="https://github.com/chinmayee504" target="_blank" title="Github" class="bi bi-github"></a>
+    </div>
+  </footer>
+  </body>
+</html>
